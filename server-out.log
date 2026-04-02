@@ -1,0 +1,58 @@
+2026-04-02 11:06:37,425 | INFO | src.app | Starting application
+2026-04-02 11:17:37,289 | INFO | src.app | Shutting down application
+2026-04-02 11:17:39,452 | INFO | src.app | Starting application
+2026-04-02 11:17:52,253 | INFO | src.app | Shutting down application
+2026-04-02 11:17:53,732 | INFO | src.app | Starting application
+2026-04-02 11:18:25,444 | INFO | src.app | Shutting down application
+2026-04-02 11:18:50,224 | INFO | src.app | Starting application
+2026-04-02 11:18:52,029 | INFO | src.app | Shutting down application
+2026-04-02 11:18:56,567 | INFO | src.app | Starting application
+2026-04-02 11:28:00,559 | INFO | src.app | Shutting down application
+2026-04-02 11:28:01,950 | INFO | src.app | Starting application
+2026-04-02 11:38:37,621 | INFO | src.app | Shutting down application
+2026-04-02 11:42:26,162 | INFO | - | src.app | Starting application
+2026-04-02 11:42:49,903 | INFO | bebde249-0f77-46d3-b44c-a56232a7582a | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=603.25
+2026-04-02 11:43:26,692 | INFO | e3c14962-dab4-43e0-a9c0-1247c0a48bd1 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=258.26
+2026-04-02 11:43:53,920 | INFO | cfd48c3a-fa47-49f6-ad5c-48b2a2a976c5 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=200 duration_ms=3.18
+2026-04-02 11:45:30,912 | INFO | 10f969ac-3ab6-4e82-bd2e-898bf1d2a701 | src.utils.middleware | Request completed | method=PUT path=/users/profile status_code=200 duration_ms=280.07
+2026-04-02 11:46:03,507 | INFO | 169a97c9-c958-4863-a394-2c040a57d319 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=401 duration_ms=250.99
+2026-04-02 11:46:14,990 | INFO | 0142efa7-858b-42dd-b728-7c9c60212734 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=251.67
+2026-04-02 11:52:45,747 | INFO | 69abe3e8-eb8d-4452-8566-8b5178e0d5d9 | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=401 duration_ms=1.76
+2026-04-02 11:52:53,851 | INFO | 8ae58a05-ba61-4589-b4fc-3fc40002a73b | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=256.24
+2026-04-02 11:53:09,643 | INFO | 758f0d5e-f163-4d46-a829-6693dc1b07cd | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=200 duration_ms=453.99
+2026-04-02 11:55:56,448 | INFO | - | src.app | Shutting down application
+2026-04-02 11:55:57,830 | INFO | - | src.app | Starting application
+2026-04-02 11:57:24,964 | INFO | - | src.app | Shutting down application
+2026-04-02 12:02:37,040 | INFO | - | src.app | Starting application
+2026-04-02 12:03:02,510 | INFO | 0a178559-6c43-438b-a041-66e5cf04438d | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=296.12
+2026-04-02 12:03:19,947 | INFO | 084ed2c8-2e85-4d12-b444-d3f5fa4ff3a8 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=200 duration_ms=3.36
+2026-04-02 12:03:56,887 | INFO | f87362c9-255a-4063-95c5-906a226cea13 | src.utils.middleware | Request completed | method=PUT path=/users/profile status_code=200 duration_ms=258.52
+2026-04-02 12:04:34,328 | INFO | c38e1e0d-1add-4faf-b784-b6a888ee67f8 | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=403 duration_ms=3.47
+2026-04-02 12:04:57,472 | INFO | 122504a8-84a6-444d-9491-777dc3e11015 | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=403 duration_ms=2.77
+2026-04-02 12:05:16,076 | INFO | 4a0cad5e-aa68-479c-bbf6-13567c3ea2d7 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=260.89
+2026-04-02 12:05:26,754 | INFO | 49aa8e4b-d259-4e3d-a199-d92f9bd8f07a | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=403 duration_ms=2.96
+2026-04-02 12:05:55,385 | INFO | 80d6168f-fcef-4a5e-affd-abf81f120840 | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=200 duration_ms=25.02
+2026-04-02 12:37:24,915 | INFO | - | src.app | Shutting down application
+2026-04-02 12:37:26,718 | INFO | - | src.app | Starting application
+2026-04-02 12:39:11,112 | INFO | 70f5ab57-6601-4942-b004-393adae77612 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=300.26
+2026-04-02 12:39:33,866 | INFO | c2b71f92-896d-436e-b32d-0351810d5c09 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=253.23
+2026-04-02 12:39:54,253 | INFO | af82da97-1ff6-45a7-91f9-2e8d45773211 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=200 duration_ms=3.32
+2026-04-02 12:40:33,114 | INFO | e959b210-6eb7-4603-9a04-a94bc0dd1e89 | src.utils.middleware | Request completed | method=PUT path=/users/profile status_code=200 duration_ms=260.54
+2026-04-02 12:46:56,720 | INFO | - | src.app | Shutting down application
+2026-04-02 13:50:10,190 | INFO | - | src.app | Starting application
+2026-04-02 13:50:33,861 | INFO | 46a407af-61d5-45e3-bc9c-ee2446c3b122 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=306.33
+2026-04-02 13:51:04,149 | INFO | 4b6462a1-fccc-49b6-93cd-c866e6c9b0f5 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=200 duration_ms=3.99
+2026-04-02 13:52:24,203 | INFO | c28e2fa7-2b90-4ebf-9f40-f05a12905a92 | src.utils.middleware | Request completed | method=PUT path=/users/profile status_code=200 duration_ms=5.26
+2026-04-02 13:52:42,477 | INFO | c8fce0b7-3564-4897-a308-1288e9b13340 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=422 duration_ms=6.91
+2026-04-02 13:53:22,645 | INFO | 1de52638-4f02-4c89-9a9e-ea92a6df3467 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=422 duration_ms=1.0
+2026-04-02 13:54:09,417 | INFO | b5581f4f-9c06-4a3e-9731-5bb054ac87df | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=422 duration_ms=1.38
+2026-04-02 13:55:17,634 | INFO | 93bb4030-c30c-4a6b-b8c7-046f48e0e589 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=422 duration_ms=1.22
+2026-04-02 13:55:50,257 | INFO | - | src.app | Shutting down application
+2026-04-02 13:55:51,914 | INFO | - | src.app | Starting application
+2026-04-02 13:56:00,234 | INFO | - | src.app | Shutting down application
+2026-04-02 13:56:02,341 | INFO | - | src.app | Starting application
+2026-04-02 13:56:46,710 | INFO | 4ae5bc80-cb44-4b30-bfd0-c776c10c476a | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=1075.67
+2026-04-02 13:57:04,992 | INFO | c848b19c-c984-4618-a40d-aac963a8736a | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=200 duration_ms=352.24
+2026-04-02 13:57:26,376 | INFO | ab139fb4-9b84-441f-b841-90cafa1d2a17 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=200 duration_ms=3.02
+2026-04-02 13:57:44,216 | INFO | 1472bfa8-3b87-4ad9-843e-e0cae212920a | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=409 duration_ms=4.7
+2026-04-02 13:58:53,683 | INFO | - | src.app | Shutting down application
