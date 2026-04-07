@@ -1,36 +1,74 @@
 import hashlib
+import secrets
+import string
 from datetime import datetime, timedelta, timezone
 
-from jose import jwt
-from passlib.context import CryptContext
+from jose import JWTError, jwt
+from pwdlib import PasswordHash
 
 from src.config import settings
+from src.controllers.exceptions import UnauthorizedError
+from src.models.schemas import TokenData
 
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+password_hash = PasswordHash.recommended()
+IST = timezone(timedelta(hours=5, minutes=30))
 
 
 def get_password_hash(password: str) -> str:
-    return pwd_context.hash(password)
+    return password_hash.hash(password)
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(plain_password, hashed_password)
+    return password_hash.verify(plain_password, hashed_password)
 
 
-def verify_legacy_password(plain_password: str, hashed_password: str) -> bool:
-    legacy_password = hashlib.sha256(plain_password.encode()).hexdigest()
-    return pwd_context.verify(legacy_password, hashed_password)
-
-
-def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
+def create_access_token(subject: str, expires_delta: timedelta | None = None) -> str:
     expire = datetime.now(timezone.utc) + (
         expires_delta or timedelta(minutes=settings.access_token_expire_minutes)
     )
-    to_encode = data.copy()
-    to_encode.update({"exp": expire})
+    to_encode = {
+        "sub": subject,
+        "exp": expire,
+    }
     return jwt.encode(
         to_encode,
         settings.jwt_secret_key,
         algorithm=settings.jwt_algorithm,
     )
+
+
+def decode_access_token(token: str) -> TokenData:
+    try:
+        payload = jwt.decode(
+            token,
+            settings.jwt_secret_key,
+            algorithms=[settings.jwt_algorithm],
+        )
+    except JWTError as exc:
+        raise UnauthorizedError("Could not validate credentials") from exc
+
+    subject = payload.get("sub")
+    if subject is None or not str(subject).strip():
+        raise UnauthorizedError("Could not validate credentials")
+
+    return TokenData(sub=str(subject))
+
+
+def generate_password_reset_otp(length: int | None = None) -> str:
+    otp_length = length or settings.reset_otp_length
+    return "".join(secrets.choice(string.digits) for _ in range(otp_length))
+
+
+def hash_password_reset_token(token: str) -> str:
+    return hashlib.sha256(token.encode("utf-8")).hexdigest()
+
+
+def normalize_client_time(client_time: datetime) -> datetime:
+    if client_time.tzinfo is None:
+        return client_time
+    return client_time.astimezone(IST).replace(tzinfo=None)
+
+
+def get_password_reset_token_expiry(client_time: datetime) -> datetime:
+    return normalize_client_time(client_time) + timedelta(minutes=settings.reset_token_expire_minutes)

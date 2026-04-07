@@ -1,11 +1,41 @@
-import re
+from datetime import datetime
 from typing import Any, Generic, TypeVar
 
-from pydantic import BaseModel, ConfigDict, field_validator
+from pydantic import BaseModel, ConfigDict, EmailStr, field_validator
 
 
-EMAIL_PATTERN = re.compile(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$")
+USERNAME_MIN_LENGTH = 3
+USERNAME_MAX_LENGTH = 100
+PASSWORD_MIN_LENGTH = 8
+PASSWORD_MAX_LENGTH = 128
 T = TypeVar("T")
+
+
+def _normalize_email(value: str) -> str:
+    return value.strip().lower()
+
+
+def _normalize_username(value: str) -> str:
+    return value.strip()
+
+
+def _validate_username(value: str) -> str:
+    normalized_value = _normalize_username(value)
+    if not normalized_value:
+        raise ValueError("Username is required")
+    if len(normalized_value) < USERNAME_MIN_LENGTH:
+        raise ValueError(f"Username must be at least {USERNAME_MIN_LENGTH} characters long")
+    if len(normalized_value) > USERNAME_MAX_LENGTH:
+        raise ValueError(f"Username must be at most {USERNAME_MAX_LENGTH} characters long")
+    return normalized_value
+
+
+def _validate_password(value: str) -> str:
+    if len(value) < PASSWORD_MIN_LENGTH:
+        raise ValueError(f"Password must be at least {PASSWORD_MIN_LENGTH} characters long")
+    if len(value) > PASSWORD_MAX_LENGTH:
+        raise ValueError(f"Password must be at most {PASSWORD_MAX_LENGTH} characters long")
+    return value
 
 
 class Token(BaseModel):
@@ -14,33 +44,38 @@ class Token(BaseModel):
 
 
 class TokenData(BaseModel):
-    username: str | None = None
+    sub: str
 
 
 class UserBase(BaseModel):
     username: str
-    email: str
+    email: EmailStr
+
+    @field_validator("username")
+    @classmethod
+    def validate_username(cls, value: str) -> str:
+        return _validate_username(value)
 
     @field_validator("email")
     @classmethod
-    def validate_email(cls, value: str) -> str:
-        if not EMAIL_PATTERN.match(value):
-            raise ValueError("Invalid email format")
-        return value.lower()
+    def validate_email(cls, value: EmailStr) -> str:
+        return _normalize_email(str(value))
 
 
-class UserRegister(UserBase):
+class UserCreate(UserBase):
     password: str
 
     @field_validator("password")
     @classmethod
     def validate_password(cls, value: str) -> str:
-        if len(value) < 6:
-            raise ValueError("Password must be at least 6 characters long")
-        return value
+        return _validate_password(value)
 
 
-class UserResponse(UserBase):
+class UserRegister(UserCreate):
+    pass
+
+
+class UserPublic(UserBase):
     id: int
     is_active: bool
     is_admin: bool
@@ -48,38 +83,106 @@ class UserResponse(UserBase):
     model_config = ConfigDict(from_attributes=True)
 
 
+class UserResponse(UserPublic):
+    pass
+
+
 class RegisterResponseData(BaseModel):
-    user: UserResponse
+    user: UserPublic
     token: Token
 
 
 class LoginRequest(BaseModel):
-    username: str
+    email: EmailStr
     password: str
+
+    @field_validator("email")
+    @classmethod
+    def normalize_email(cls, value: EmailStr) -> str:
+        return _normalize_email(str(value))
 
 
 class UserUpdate(BaseModel):
     username: str | None = None
-    email: str | None = None
-    password: str | None = None
+    email: EmailStr | None = None
+
+    @field_validator("username")
+    @classmethod
+    def validate_optional_username(cls, value: str | None) -> str | None:
+        if value is None:
+            return value
+        return _validate_username(value)
 
     @field_validator("email")
     @classmethod
-    def validate_optional_email(cls, value: str | None) -> str | None:
+    def validate_optional_email(cls, value: EmailStr | None) -> str | None:
         if value is None:
             return value
-        if not EMAIL_PATTERN.match(value):
-            raise ValueError("Invalid email format")
-        return value.lower()
+        return _normalize_email(str(value))
 
-    @field_validator("password")
+
+class ChangePasswordRequest(BaseModel):
+    current_password: str
+    new_password: str
+
+    @field_validator("new_password")
     @classmethod
-    def validate_optional_password(cls, value: str | None) -> str | None:
-        if value is None:
-            return value
-        if len(value) < 6:
-            raise ValueError("Password must be at least 6 characters long")
+    def validate_new_password(cls, value: str) -> str:
+        return _validate_password(value)
+
+
+class ForgotPasswordRequest(BaseModel):
+    email: EmailStr
+    client_time: datetime
+
+    @field_validator("email")
+    @classmethod
+    def normalize_email(cls, value: EmailStr) -> str:
+        return _normalize_email(str(value))
+
+    @field_validator("client_time")
+    @classmethod
+    def validate_client_time(cls, value: datetime) -> datetime:
         return value
+
+
+class ForgotPasswordResponseData(BaseModel):
+    detail: str
+    otp_preview: str | None = None
+
+
+class ResetPasswordRequest(BaseModel):
+    email: EmailStr
+    otp: str
+    new_password: str
+    client_time: datetime
+
+    @field_validator("email")
+    @classmethod
+    def normalize_email(cls, value: EmailStr) -> str:
+        return _normalize_email(str(value))
+
+    @field_validator("otp")
+    @classmethod
+    def validate_otp(cls, value: str) -> str:
+        otp = value.strip()
+        if len(otp) != 6 or not otp.isdigit():
+            raise ValueError("OTP must be a 6 digit code")
+        return otp
+
+    @field_validator("new_password")
+    @classmethod
+    def validate_new_password(cls, value: str) -> str:
+        return _validate_password(value)
+
+    @field_validator("client_time")
+    @classmethod
+    def validate_client_time(cls, value: datetime) -> datetime:
+        return value
+
+
+class MessageResponseData(BaseModel):
+    detail: str
 
 
 class ErrorDetail(BaseModel):

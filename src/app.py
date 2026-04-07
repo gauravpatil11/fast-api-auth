@@ -6,7 +6,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from src.config import settings
 from src.controllers.exceptions import DatabaseError
-from src.models.database import Base, engine
+from src.models.database import Base, engine, sync_user_auth_schema
 from src.models.schemas import SuccessResponse
 from src.routes.auth_routes import router as auth_router
 from src.routes.user_routes import router as user_router
@@ -27,6 +27,7 @@ async def lifespan(_: FastAPI):
     if settings.auto_create_tables:
         try:
             Base.metadata.create_all(bind=engine)
+            sync_user_auth_schema()
         except SQLAlchemyError as exc:
             logger.exception("Database initialization failed", exc_info=exc)
             raise DatabaseError("Unable to initialize database") from exc

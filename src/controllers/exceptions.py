@@ -6,12 +6,14 @@ class AppError(Exception):
         status_code: int,
         error_code: str,
         errors: list[dict] | None = None,
+        headers: dict[str, str] | None = None,
     ) -> None:
         super().__init__(message)
         self.message = message
         self.status_code = status_code
         self.error_code = error_code
         self.errors = errors or []
+        self.headers = headers
 
 
 class BadRequestError(AppError):
@@ -25,11 +27,17 @@ class BadRequestError(AppError):
 
 
 class UnauthorizedError(AppError):
-    def __init__(self, message: str = "Unauthorized") -> None:
+    def __init__(
+        self,
+        message: str = "Unauthorized",
+        *,
+        headers: dict[str, str] | None = None,
+    ) -> None:
         super().__init__(
             message,
             status_code=401,
             error_code="unauthorized",
+            headers=headers or {"WWW-Authenticate": "Bearer"},
         )
 
 

@@ -1,5 +1,7 @@
-import os
 from pathlib import Path
+
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from src.constant.app_constants import ACCESS_TOKEN_EXPIRE_MINUTES, JWT_ALGORITHM
 
@@ -7,55 +9,44 @@ from src.constant.app_constants import ACCESS_TOKEN_EXPIRE_MINUTES, JWT_ALGORITH
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-def _load_env_file() -> None:
-    env_path = BASE_DIR / ".env"
-    if not env_path.exists():
-        return
-
-    for raw_line in env_path.read_text(encoding="utf-8").splitlines():
-        line = raw_line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", 1)
-        os.environ.setdefault(key.strip(), value.strip())
-
-
-_load_env_file()
-
-
-def _get_bool(name: str, default: bool) -> bool:
-    value = os.getenv(name)
-    if value is None:
-        return default
-    return value.strip().lower() in {"1", "true", "yes", "on"}
-
-
-class Settings:
-    app_name: str = os.getenv("APP_NAME", "FastAPI Auth Service")
-    app_env: str = os.getenv("APP_ENV", "development")
-    app_debug: bool = _get_bool("APP_DEBUG", True)
-    app_host: str = os.getenv("APP_HOST", "127.0.0.1")
-    app_port: int = int(os.getenv("APP_PORT", "8000"))
-    app_log_level: str = os.getenv("APP_LOG_LEVEL", "INFO").upper()
-    auto_create_tables: bool = _get_bool("AUTO_CREATE_TABLES", True)
-
-    mysql_user: str = os.getenv("MYSQL_USER", "root")
-    mysql_password: str = os.getenv("MYSQL_PASSWORD", "")
-    mysql_host: str = os.getenv("MYSQL_HOST", "localhost")
-    mysql_port: int = int(os.getenv("MYSQL_PORT", "3306"))
-    mysql_db: str = os.getenv("MYSQL_DB", "fastapi_auth")
-    db_pool_size: int = int(os.getenv("DB_POOL_SIZE", "5"))
-    db_max_overflow: int = int(os.getenv("DB_MAX_OVERFLOW", "10"))
-    db_pool_timeout: int = int(os.getenv("DB_POOL_TIMEOUT", "30"))
-
-    jwt_secret_key: str = os.getenv(
-        "JWT_SECRET_KEY",
-        "",
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=BASE_DIR / ".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
     )
-    jwt_algorithm: str = os.getenv("JWT_ALGORITHM", JWT_ALGORITHM)
-    access_token_expire_minutes: int = int(
-        os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", str(ACCESS_TOKEN_EXPIRE_MINUTES))
-    )
+
+    app_name: str = "FastAPI Auth Service"
+    app_env: str = "development"
+    app_debug: bool = True
+    app_host: str = "127.0.0.1"
+    app_port: int = 8000
+    app_log_level: str = "INFO"
+    auto_create_tables: bool = True
+
+    mysql_user: str = "root"
+    mysql_password: str = ""
+    mysql_host: str = "localhost"
+    mysql_port: int = 3306
+    mysql_db: str = "fastapi_auth"
+    db_pool_size: int = 5
+    db_max_overflow: int = 10
+    db_pool_timeout: int = 30
+
+    jwt_secret_key: str = Field(default="")
+    jwt_algorithm: str = JWT_ALGORITHM
+    access_token_expire_minutes: int = ACCESS_TOKEN_EXPIRE_MINUTES
+    reset_token_expire_minutes: int = 5
+    reset_otp_length: int = 6
+    frontend_url: str | None = None
+    password_reset_url_base: str | None = None
+    password_reset_path: str = "/reset-password"
+    mail_host: str | None = None
+    mail_port: int = 587
+    mail_username: str | None = None
+    mail_password: str | None = None
+    mail_from_email: str | None = None
+    mail_use_tls: bool = True
 
     server_out_log_path: Path = BASE_DIR / "server-out.log"
     server_error_log_path: Path = BASE_DIR / "server-error.log"

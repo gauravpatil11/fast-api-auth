@@ -1,58 +1,413 @@
-2026-04-02 11:06:37,425 | INFO | src.app | Starting application
-2026-04-02 11:17:37,289 | INFO | src.app | Shutting down application
-2026-04-02 11:17:39,452 | INFO | src.app | Starting application
-2026-04-02 11:17:52,253 | INFO | src.app | Shutting down application
-2026-04-02 11:17:53,732 | INFO | src.app | Starting application
-2026-04-02 11:18:25,444 | INFO | src.app | Shutting down application
-2026-04-02 11:18:50,224 | INFO | src.app | Starting application
-2026-04-02 11:18:52,029 | INFO | src.app | Shutting down application
-2026-04-02 11:18:56,567 | INFO | src.app | Starting application
-2026-04-02 11:28:00,559 | INFO | src.app | Shutting down application
-2026-04-02 11:28:01,950 | INFO | src.app | Starting application
-2026-04-02 11:38:37,621 | INFO | src.app | Shutting down application
-2026-04-02 11:42:26,162 | INFO | - | src.app | Starting application
-2026-04-02 11:42:49,903 | INFO | bebde249-0f77-46d3-b44c-a56232a7582a | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=603.25
-2026-04-02 11:43:26,692 | INFO | e3c14962-dab4-43e0-a9c0-1247c0a48bd1 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=258.26
-2026-04-02 11:43:53,920 | INFO | cfd48c3a-fa47-49f6-ad5c-48b2a2a976c5 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=200 duration_ms=3.18
-2026-04-02 11:45:30,912 | INFO | 10f969ac-3ab6-4e82-bd2e-898bf1d2a701 | src.utils.middleware | Request completed | method=PUT path=/users/profile status_code=200 duration_ms=280.07
-2026-04-02 11:46:03,507 | INFO | 169a97c9-c958-4863-a394-2c040a57d319 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=401 duration_ms=250.99
-2026-04-02 11:46:14,990 | INFO | 0142efa7-858b-42dd-b728-7c9c60212734 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=251.67
-2026-04-02 11:52:45,747 | INFO | 69abe3e8-eb8d-4452-8566-8b5178e0d5d9 | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=401 duration_ms=1.76
-2026-04-02 11:52:53,851 | INFO | 8ae58a05-ba61-4589-b4fc-3fc40002a73b | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=256.24
-2026-04-02 11:53:09,643 | INFO | 758f0d5e-f163-4d46-a829-6693dc1b07cd | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=200 duration_ms=453.99
-2026-04-02 11:55:56,448 | INFO | - | src.app | Shutting down application
-2026-04-02 11:55:57,830 | INFO | - | src.app | Starting application
-2026-04-02 11:57:24,964 | INFO | - | src.app | Shutting down application
-2026-04-02 12:02:37,040 | INFO | - | src.app | Starting application
-2026-04-02 12:03:02,510 | INFO | 0a178559-6c43-438b-a041-66e5cf04438d | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=296.12
-2026-04-02 12:03:19,947 | INFO | 084ed2c8-2e85-4d12-b444-d3f5fa4ff3a8 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=200 duration_ms=3.36
-2026-04-02 12:03:56,887 | INFO | f87362c9-255a-4063-95c5-906a226cea13 | src.utils.middleware | Request completed | method=PUT path=/users/profile status_code=200 duration_ms=258.52
-2026-04-02 12:04:34,328 | INFO | c38e1e0d-1add-4faf-b784-b6a888ee67f8 | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=403 duration_ms=3.47
-2026-04-02 12:04:57,472 | INFO | 122504a8-84a6-444d-9491-777dc3e11015 | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=403 duration_ms=2.77
-2026-04-02 12:05:16,076 | INFO | 4a0cad5e-aa68-479c-bbf6-13567c3ea2d7 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=260.89
-2026-04-02 12:05:26,754 | INFO | 49aa8e4b-d259-4e3d-a199-d92f9bd8f07a | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=403 duration_ms=2.96
-2026-04-02 12:05:55,385 | INFO | 80d6168f-fcef-4a5e-affd-abf81f120840 | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=200 duration_ms=25.02
-2026-04-02 12:37:24,915 | INFO | - | src.app | Shutting down application
-2026-04-02 12:37:26,718 | INFO | - | src.app | Starting application
-2026-04-02 12:39:11,112 | INFO | 70f5ab57-6601-4942-b004-393adae77612 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=300.26
-2026-04-02 12:39:33,866 | INFO | c2b71f92-896d-436e-b32d-0351810d5c09 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=253.23
-2026-04-02 12:39:54,253 | INFO | af82da97-1ff6-45a7-91f9-2e8d45773211 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=200 duration_ms=3.32
-2026-04-02 12:40:33,114 | INFO | e959b210-6eb7-4603-9a04-a94bc0dd1e89 | src.utils.middleware | Request completed | method=PUT path=/users/profile status_code=200 duration_ms=260.54
-2026-04-02 12:46:56,720 | INFO | - | src.app | Shutting down application
-2026-04-02 13:50:10,190 | INFO | - | src.app | Starting application
-2026-04-02 13:50:33,861 | INFO | 46a407af-61d5-45e3-bc9c-ee2446c3b122 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=306.33
-2026-04-02 13:51:04,149 | INFO | 4b6462a1-fccc-49b6-93cd-c866e6c9b0f5 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=200 duration_ms=3.99
-2026-04-02 13:52:24,203 | INFO | c28e2fa7-2b90-4ebf-9f40-f05a12905a92 | src.utils.middleware | Request completed | method=PUT path=/users/profile status_code=200 duration_ms=5.26
-2026-04-02 13:52:42,477 | INFO | c8fce0b7-3564-4897-a308-1288e9b13340 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=422 duration_ms=6.91
-2026-04-02 13:53:22,645 | INFO | 1de52638-4f02-4c89-9a9e-ea92a6df3467 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=422 duration_ms=1.0
-2026-04-02 13:54:09,417 | INFO | b5581f4f-9c06-4a3e-9731-5bb054ac87df | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=422 duration_ms=1.38
-2026-04-02 13:55:17,634 | INFO | 93bb4030-c30c-4a6b-b8c7-046f48e0e589 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=422 duration_ms=1.22
-2026-04-02 13:55:50,257 | INFO | - | src.app | Shutting down application
-2026-04-02 13:55:51,914 | INFO | - | src.app | Starting application
-2026-04-02 13:56:00,234 | INFO | - | src.app | Shutting down application
-2026-04-02 13:56:02,341 | INFO | - | src.app | Starting application
-2026-04-02 13:56:46,710 | INFO | 4ae5bc80-cb44-4b30-bfd0-c776c10c476a | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=1075.67
-2026-04-02 13:57:04,992 | INFO | c848b19c-c984-4618-a40d-aac963a8736a | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=200 duration_ms=352.24
-2026-04-02 13:57:26,376 | INFO | ab139fb4-9b84-441f-b841-90cafa1d2a17 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=200 duration_ms=3.02
-2026-04-02 13:57:44,216 | INFO | 1472bfa8-3b87-4ad9-843e-e0cae212920a | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=409 duration_ms=4.7
-2026-04-02 13:58:53,683 | INFO | - | src.app | Shutting down application
+2026-04-06 17:36:13,916 | INFO | - | src.app | Starting application
+2026-04-06 17:36:17,971 | ERROR | - | src.app | Database initialization failed
+Traceback (most recent call last):
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\pymysql\connections.py", line 661, in connect
+    sock = socket.create_connection(
+        (self.host, self.port), self.connect_timeout, **kwargs
+    )
+  File "C:\Program Files\Python313\Lib\socket.py", line 864, in create_connection
+    raise exceptions[0]
+  File "C:\Program Files\Python313\Lib\socket.py", line 849, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\pymysql\connections.py", line 723, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No connection could be made because the target machine actively refused it)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\src\app.py", line 29, in lifespan
+    Base.metadata.create_all(bind=engine)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\sql\schema.py", line 5928, in create_all
+    bind._run_ddl_visitor(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3267, in _run_ddl_visitor
+    with self.begin() as conn:
+         ~~~~~~~~~~^^
+  File "C:\Program Files\Python313\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3257, in begin
+    with self.connect() as conn:
+         ~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3293, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2448, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\pymysql\connections.py", line 723, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No connection could be made because the target machine actively refused it)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-06 17:44:21,430 | INFO | - | src.app | Starting application
+2026-04-06 17:44:36,516 | INFO | a9238f4c-dde7-4fc8-86eb-ee1f8702f876 | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=5.19
+2026-04-06 17:45:16,484 | INFO | 72fda64a-9120-433a-b0a7-dae01ed2d0c6 | src.utils.middleware | Request completed | method=GET path=/docs status_code=200 duration_ms=0.28
+2026-04-06 17:45:16,663 | INFO | 72a5f53c-f11f-492c-a5b1-e8a3744752d1 | src.utils.middleware | Request completed | method=GET path=/openapi.json status_code=200 duration_ms=76.35
+2026-04-06 17:45:18,439 | INFO | dc0a78af-8007-4f3a-9d92-9719e8ed4c0c | src.utils.middleware | Request completed | method=GET path=/docs status_code=200 duration_ms=0.22
+2026-04-06 17:45:18,490 | INFO | 8b8cadb0-7e7b-4024-b6a2-a05d7c2210c2 | src.utils.middleware | Request completed | method=GET path=/openapi.json status_code=200 duration_ms=0.37
+2026-04-06 17:45:36,059 | INFO | 7adb73e7-4799-413d-a9b7-47d195d1b4c9 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=109.92
+2026-04-06 17:47:12,154 | INFO | 7929655a-e2f0-48f3-b342-d7799e8440b2 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=400 duration_ms=1.23
+2026-04-06 17:48:47,031 | INFO | - | src.app | Shutting down application
+2026-04-06 17:48:48,401 | INFO | - | src.app | Starting application
+2026-04-06 17:49:15,184 | INFO | b8eb3528-7f97-47bd-a709-7a4b3689f27c | src.utils.middleware | Request completed | method=GET path=/docs status_code=200 duration_ms=0.98
+2026-04-06 17:49:15,345 | INFO | 0d7365e8-e08c-4517-a722-a32f66403c5c | src.utils.middleware | Request completed | method=GET path=/openapi.json status_code=200 duration_ms=64.24
+2026-04-06 17:49:37,679 | INFO | a2eb7084-b5b4-4b6b-95e5-0ceabe3d86f1 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=89.39
+2026-04-06 17:50:06,379 | INFO | 1547add0-7bbf-4266-810e-d25dfc052eb8 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=401 duration_ms=84.6
+2026-04-06 17:50:26,183 | INFO | 54369cbe-0734-437b-8db8-6ef687538652 | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=401 duration_ms=1.98
+2026-04-06 17:50:43,574 | INFO | 7a03ea41-ea95-4123-bf36-52b0b5ca2583 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=87.79
+2026-04-06 17:50:52,238 | INFO | 2901cc3c-6c18-44f2-b9f3-6ef8384bde9a | src.utils.middleware | Request completed | method=GET path=/users/profile status_code=401 duration_ms=0.88
+2026-04-06 17:52:48,920 | INFO | - | src.app | Shutting down application
+2026-04-06 17:52:50,331 | INFO | - | src.app | Starting application
+2026-04-07 09:30:48,651 | INFO | - | src.app | Starting application
+2026-04-07 09:31:08,939 | INFO | f5551a57-101a-4a3d-84cb-f774181f47b3 | src.utils.middleware | Request completed | method=GET path=/docs status_code=200 duration_ms=1.65
+2026-04-07 09:31:09,361 | INFO | 70f4bb04-56eb-453a-b541-c08312c1e113 | src.utils.middleware | Request completed | method=GET path=/openapi.json status_code=200 duration_ms=85.22
+2026-04-07 09:31:27,841 | INFO | 7580ec98-7bc2-406e-b518-4672c690f51f | src.utils.middleware | Request completed | method=GET path=/health status_code=200 duration_ms=347.14
+2026-04-07 09:32:07,787 | INFO | 571bbb15-6761-4bac-a614-c3673a00a3e6 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=116.87
+2026-04-07 09:33:16,873 | INFO | ca82f142-0408-418b-927c-6e99820be01f | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=105.9
+2026-04-07 09:34:03,112 | ERROR | 661db2ec-17e6-4080-9921-bafb4e93b6b4 | src.utils.middleware | Request failed | method=POST path=/auth/login duration_ms=143.96
+Traceback (most recent call last):
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\fastapi\routing.py", line 723, in app
+    raise validation_error
+fastapi.exceptions.RequestValidationError: 1 validation error:
+  {'type': 'model_attributes_type', 'loc': ('body',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': b'grant_type=password&username=user1%40example.com&password=user1%40pass'}
+
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\src\routes\auth_routes.py", line 32, in login
+    POST /auth/login
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\src\utils\middleware.py", line 22, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\_exception_handler.py", line 59, in wrapped_app
+    response = await handler(conn, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\src\utils\exception_handlers.py", line 54, in handle_validation_error
+    return _error_response(
+        request=request,
+    ...<3 lines>...
+        details=exc.errors(),
+    )
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\src\utils\exception_handlers.py", line 22, in _error_response
+    return JSONResponse(
+        status_code=status_code,
+    ...<12 lines>...
+        headers=headers,
+    )
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\responses.py", line 192, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\responses.py", line 45, in __init__
+    self.body = self.render(content)
+                ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DeltaX\Python Fullstack\FASTAPI\fast-api-auth\venv\Lib\site-packages\starlette\responses.py", line 195, in render
+    return json.dumps(
+           ~~~~~~~~~~^
+        content,
+        ^^^^^^^^
+    ...<3 lines>...
+        separators=(",", ":"),
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ).encode("utf-8")
+    ^
+  File "C:\Program Files\Python313\Lib\json\__init__.py", line 242, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "C:\Program Files\Python313\Lib\json\encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python313\Lib\json\encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Program Files\Python313\Lib\json\encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type bytes is not JSON serializable
+2026-04-07 09:36:31,156 | INFO | - | src.app | Shutting down application
+2026-04-07 09:36:32,691 | INFO | - | src.app | Starting application
+2026-04-07 09:36:40,099 | INFO | - | src.app | Shutting down application
+2026-04-07 09:37:10,643 | INFO | - | src.app | Starting application
+2026-04-07 09:38:22,172 | INFO | - | src.app | Shutting down application
+2026-04-07 09:39:05,266 | INFO | - | src.app | Starting application
+2026-04-07 09:39:20,445 | INFO | 5eec58eb-a4bf-4e13-91d0-59cab66d4889 | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=2.88
+2026-04-07 09:39:20,505 | INFO | 8516a96a-64a5-431f-85c4-4e00acbe1f5e | src.utils.middleware | Request completed | method=GET path=/favicon.ico status_code=404 duration_ms=0.28
+2026-04-07 09:39:34,183 | INFO | e8d76787-de9d-45b9-8e87-992fa5dedd22 | src.utils.middleware | Request completed | method=GET path=/docs status_code=200 duration_ms=0.4
+2026-04-07 09:39:34,414 | INFO | 21765111-0555-469f-a62f-800789bd832d | src.utils.middleware | Request completed | method=GET path=/openapi.json status_code=200 duration_ms=70.73
+2026-04-07 09:40:06,243 | INFO | 339fd308-eba9-47da-ae66-2311c2e7dd24 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=105.54
+2026-04-07 09:41:07,726 | INFO | e79550a7-0451-4bd4-b19a-2d69e986b8ad | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=400 duration_ms=3.18
+2026-04-07 09:58:48,393 | INFO | - | src.app | Shutting down application
+2026-04-07 10:02:25,903 | INFO | - | src.app | Starting application
+2026-04-07 10:02:36,591 | INFO | 46a35a08-eadb-4340-b48c-b879e664e06d | src.utils.middleware | Request completed | method=GET path=/docs status_code=200 duration_ms=0.63
+2026-04-07 10:02:36,764 | INFO | 38b3ea81-d09e-49f0-ac3b-914c57ca3018 | src.utils.middleware | Request completed | method=GET path=/openapi.json status_code=200 duration_ms=80.38
+2026-04-07 10:02:39,095 | INFO | 605cce82-17ea-4c92-af7b-1600a85b5e07 | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=14.13
+2026-04-07 10:02:40,597 | INFO | 2fb8ec65-40ca-4e46-8123-cc3d9843ac64 | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=1.0
+2026-04-07 10:02:40,780 | INFO | 910af944-8f7a-4b49-8fae-dc35cb4e8cc3 | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=0.65
+2026-04-07 10:02:41,493 | INFO | a31ab1db-cb2c-4268-bf80-056e94870eef | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=0.79
+2026-04-07 10:04:02,158 | INFO | ee52294f-dfe1-4f61-bbc3-02f812265abf | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=1.04
+2026-04-07 10:05:03,586 | INFO | a1576a32-b36a-465a-8911-59a8f632fdf4 | src.utils.middleware | Request completed | method=GET path=/health status_code=200 duration_ms=1.1
+2026-04-07 10:05:52,869 | INFO | a7b28ff7-4674-42e3-b56e-4695f6c8bdcc | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=409 duration_ms=22.38
+2026-04-07 10:06:25,635 | INFO | fe45896a-31ae-4dff-a978-80c39ca6b246 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=84.92
+2026-04-07 10:07:37,622 | INFO | e2f6db54-8bcd-47d0-86de-a0bbc533b158 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=81.32
+2026-04-07 10:08:15,209 | INFO | 62ea3912-9d4d-43bb-aa14-8434d69e02dc | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=3.49
+2026-04-07 10:09:25,864 | INFO | a363f1dd-8e00-4f97-8ff4-5cbc037a7cfe | src.utils.middleware | Request completed | method=PUT path=/users/profile status_code=404 duration_ms=0.26
+2026-04-07 10:16:05,405 | INFO | ca96f6ce-0381-4f81-84bb-f244448527f9 | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=400 duration_ms=3.33
+2026-04-07 10:16:05,422 | INFO | cbcfef84-7781-4e53-b572-8f65515b1576 | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=200 duration_ms=20.1
+2026-04-07 10:16:05,457 | INFO | d5c90f56-9659-447b-9708-0a1f4e842ebc | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=200 duration_ms=54.85
+2026-04-07 10:16:05,458 | INFO | 254a8320-4bf9-47d9-84c1-3e31948cc4d7 | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=200 duration_ms=56.74
+2026-04-07 10:16:06,963 | INFO | - | src.app | Starting application
+2026-04-07 10:16:09,443 | INFO | - | src.app | Shutting down application
+2026-04-07 10:16:20,345 | INFO | - | src.app | Starting application
+2026-04-07 10:16:52,121 | INFO | 5703253a-1aea-4f21-a50e-ffb24643997a | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=401 duration_ms=18.95
+2026-04-07 10:17:09,766 | INFO | b4eadc23-7e44-40ca-ab0a-3bf5d2a13801 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=90.07
+2026-04-07 10:17:15,927 | INFO | 6a8d5083-94e7-44bb-a317-7e31c9650e07 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=409 duration_ms=2.67
+2026-04-07 10:18:03,378 | INFO | f68e55b1-a20f-4aca-acb8-a7d2c0d7cb5d | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=409 duration_ms=2.99
+2026-04-07 10:18:05,211 | INFO | ba681fa0-6968-4362-bbfd-ab534be79fea | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=409 duration_ms=3.32
+2026-04-07 10:18:06,441 | INFO | bb5ec800-a9a7-496b-bccd-e1a902443fa8 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=409 duration_ms=2.73
+2026-04-07 10:18:19,511 | INFO | abd301d3-3af3-4fdb-8598-d9fc45e9dadc | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=82.86
+2026-04-07 10:18:34,052 | INFO | 90b33221-746f-4465-af9b-8448bc515d72 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=409 duration_ms=2.91
+2026-04-07 10:18:53,768 | INFO | e3ad1d1b-23ed-481b-8743-ea9d0494daec | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=208.06
+2026-04-07 10:19:14,970 | INFO | c61e9906-ec4b-46ff-86e6-7bcac306121d | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=4.76
+2026-04-07 10:23:32,386 | INFO | 74d921bc-6cde-403a-92eb-16363e94897a | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=10.22
+2026-04-07 10:23:32,392 | INFO | 520d370f-091e-4916-9e11-fb7cb24bf1b8 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=409 duration_ms=15.66
+2026-04-07 10:23:32,393 | INFO | 154fcce3-1f2b-40b9-9a8f-885b4153d0f3 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=409 duration_ms=16.22
+2026-04-07 10:23:32,394 | INFO | 87688005-e77a-4494-815b-dbb07c91dbdb | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=17.56
+2026-04-07 10:23:32,491 | INFO | 2f0ae1bc-b57a-47a5-8a30-fc2c97db7052 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=114.23
+2026-04-07 10:23:56,285 | INFO | - | src.app | Starting application
+2026-04-07 10:24:11,324 | INFO | 02ce0ae1-41a2-4564-972d-2e8415fdc2d3 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=96.99
+2026-04-07 10:25:02,902 | INFO | 09622f95-1e7f-439c-8576-a8b4bc89b8ac | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=4.2
+2026-04-07 10:25:21,790 | INFO | ded50350-00b7-4957-b246-565462f1f29e | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=75.29
+2026-04-07 10:26:26,433 | INFO | 7d9a5e43-c3f6-4baf-b228-76f93152319f | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=2.95
+2026-04-07 10:27:06,517 | INFO | 48f6082d-2131-4509-9535-0896ccdfe5b0 | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=200 duration_ms=12.67
+2026-04-07 10:27:35,013 | INFO | b736787f-6a67-46a8-8699-3c27d05b4e42 | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=200 duration_ms=15.58
+2026-04-07 10:27:42,854 | INFO | 2d627115-6dda-43ff-a658-5f207b401e40 | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=2.77
+2026-04-07 10:28:04,284 | INFO | 8eccf8be-4e33-4412-9b3e-87c1979b9d2b | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=3.27
+2026-04-07 10:28:28,989 | INFO | 263511de-ab62-4bda-9b15-ed620dd53fe3 | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=3.03
+2026-04-07 10:29:50,845 | INFO | - | src.app | Shutting down application
+2026-04-07 10:29:56,735 | INFO | - | src.app | Starting application
+2026-04-07 10:30:02,000 | INFO | 188bd565-af7c-4ec5-bdc9-0ab3077f71c3 | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=1.74
+2026-04-07 10:30:48,486 | INFO | 23a767d0-e7b8-476d-b3be-ea356f2ad394 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=100.43
+2026-04-07 10:31:22,727 | INFO | 5d047f47-c2fc-41fc-9c1e-cb2e4510d061 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=74.28
+2026-04-07 10:31:47,478 | INFO | d988ed1b-af9f-4642-89ae-36ca493b281c | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=3.97
+2026-04-07 10:32:31,067 | INFO | 72c0a355-8a7b-4ffa-947a-723fb198edb6 | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=200 duration_ms=16.18
+2026-04-07 10:33:29,767 | INFO | 18c4fe5e-c9a3-49e3-b72c-68d42e8aa816 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=127.52
+2026-04-07 10:33:47,564 | INFO | 33cbe895-f041-4383-900c-f6cd9ff8e514 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=70.18
+2026-04-07 10:34:03,160 | INFO | 77656dc4-761b-4fe2-850f-278e725b1f72 | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=3.24
+2026-04-07 10:35:00,091 | INFO | 80ddddb3-7d37-4e92-9135-a658378dc23c | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=404 duration_ms=0.3
+2026-04-07 10:35:27,314 | INFO | eb0bde7a-b89c-4484-b058-70ae7e6ce2f8 | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=404 duration_ms=0.26
+2026-04-07 10:36:16,818 | INFO | e58b1547-c7f7-49df-a84c-96d37ed81a60 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=71.64
+2026-04-07 10:36:41,740 | INFO | d43738c4-a261-451b-beed-7e572f16f055 | src.utils.middleware | Request completed | method=GET path=/users/userlist status_code=404 duration_ms=0.29
+2026-04-07 10:37:37,573 | INFO | c0c043d0-e700-437e-9ac3-e50be1fa3e1d | src.utils.middleware | Request completed | method=GET path=/user/userlist status_code=200 duration_ms=4.53
+2026-04-07 10:38:21,784 | INFO | 0236f933-3f2a-4c27-b893-93f7bca6eabb | src.utils.middleware | Request completed | method=GET path=/health status_code=200 duration_ms=1.07
+2026-04-07 10:38:27,086 | INFO | 627268a8-9aba-4637-96ea-2f507a6223bd | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=0.81
+2026-04-07 10:39:50,109 | INFO | bab2e367-a206-4a41-af53-a475464f4a22 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=214.68
+2026-04-07 10:41:11,480 | INFO | 7e166a84-8fff-4a93-b80f-d61deaa3e774 | src.utils.middleware | Request completed | method=GET path=/user/change-password status_code=405 duration_ms=0.26
+2026-04-07 10:41:47,067 | INFO | 3dffb697-c24c-46aa-bfa3-7f3b90bfc86e | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=71.4
+2026-04-07 10:42:03,145 | INFO | b9e53b6b-4daf-4a87-a1a7-dcb0c69826c6 | src.utils.middleware | Request completed | method=GET path=/user/change-password status_code=405 duration_ms=0.24
+2026-04-07 10:42:24,538 | INFO | 6cd0fdb8-8626-4ad7-89bc-8fc513e5ce12 | src.utils.middleware | Request completed | method=POST path=/user/change-password status_code=200 duration_ms=218.75
+2026-04-07 10:42:35,507 | INFO | 9ff6956a-094e-48b0-8ebb-67491d830aa7 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=401 duration_ms=74.59
+2026-04-07 10:42:42,997 | INFO | abb1a974-2371-4b02-81e4-29e729a5630b | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=71.99
+2026-04-07 10:44:19,554 | INFO | f60c633c-ab7e-4c74-9042-4183e5b112b4 | src.utils.middleware | Request completed | method=POST path=/user/forgot-password status_code=404 duration_ms=0.21
+2026-04-07 10:44:46,837 | INFO | 1e911b6f-da1f-4151-b1c1-081c5c7f10b3 | src.utils.middleware | Request completed | method=POST path=/user/forgot-password status_code=404 duration_ms=0.22
+2026-04-07 10:45:50,616 | INFO | 88b42800-d0d3-497f-8735-381812b4e944 | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=202 duration_ms=12.9
+2026-04-07 10:45:50,617 | INFO | 88b42800-d0d3-497f-8735-381812b4e944 | src.controllers.auth_controller | Password reset OTP for user1@example.com is 250033
+2026-04-07 10:48:36,180 | INFO | af91ec0d-8234-44c0-b94f-169e25d9f59b | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=200 duration_ms=181.32
+2026-04-07 10:49:11,981 | INFO | c789cea4-4be1-43ce-b91f-2bb0d0a14a2a | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=401 duration_ms=71.61
+2026-04-07 10:49:19,819 | INFO | 4a6c8e95-ea3e-4d0a-ad77-d035c58b48e2 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=72.48
+2026-04-07 10:52:13,840 | INFO | - | src.app | Shutting down application
+2026-04-07 10:52:23,891 | INFO | - | src.app | Starting application
+2026-04-07 10:52:47,647 | INFO | 0b033206-aece-46bb-86a9-8098060e0c81 | src.utils.middleware | Request completed | method=GET path=/health status_code=200 duration_ms=2.01
+2026-04-07 10:52:55,282 | INFO | aa7d7359-bc94-4b04-9be9-20dfbb3ecfb4 | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=0.97
+2026-04-07 10:53:11,111 | INFO | 33c048ec-d1a9-4292-be24-fbcb063cc97b | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=100.39
+2026-04-07 10:53:33,116 | INFO | 3543ffa1-e708-476f-8ad8-7fa24b0ce7c8 | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=4.03
+2026-04-07 10:54:05,398 | INFO | 6e67daf9-7be5-400f-8c60-9e8956429659 | src.utils.middleware | Request completed | method=POST path=/user/change-password status_code=200 duration_ms=221.92
+2026-04-07 10:54:25,889 | INFO | 33be1117-00b8-45a2-89a0-33dbb3e5b22d | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=202 duration_ms=12.19
+2026-04-07 10:54:25,890 | INFO | 33be1117-00b8-45a2-89a0-33dbb3e5b22d | src.controllers.auth_controller | Password reset OTP for user3@example.com is 171285
+2026-04-07 10:54:53,465 | INFO | 4eed1a28-b844-4e3b-a7cb-cdf9c2a9cc7e | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=400 duration_ms=4.58
+2026-04-07 10:55:00,799 | INFO | ddac2815-54d5-4c3d-b218-b46291ef1add | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=200 duration_ms=85.67
+2026-04-07 10:55:19,254 | INFO | fc75b0ae-f9fa-42a0-b42d-7080510e1681 | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=202 duration_ms=9.01
+2026-04-07 10:55:19,255 | INFO | fc75b0ae-f9fa-42a0-b42d-7080510e1681 | src.controllers.auth_controller | Password reset OTP for user3@example.com is 054949
+2026-04-07 10:56:20,878 | INFO | 0be91392-b4f8-471f-8c60-63da8416aa19 | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=200 duration_ms=87.06
+2026-04-07 10:56:34,902 | INFO | ebdc1949-b726-4fe8-8f0f-5f793eba2cd5 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=401 duration_ms=75.63
+2026-04-07 10:56:39,787 | INFO | f8cfa0ff-3094-4b16-82a6-7fe2b473fe4a | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=75.11
+2026-04-07 11:00:24,084 | INFO | - | src.app | Shutting down application
+2026-04-07 11:00:25,587 | INFO | - | src.app | Starting application
+2026-04-07 11:02:25,554 | INFO | - | src.app | Shutting down application
+2026-04-07 11:02:27,015 | INFO | - | src.app | Starting application
+2026-04-07 11:12:27,989 | INFO | cd8d0097-4687-4378-a53e-8322e0e9b418 | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=202 duration_ms=29.68
+2026-04-07 11:12:27,990 | INFO | cd8d0097-4687-4378-a53e-8322e0e9b418 | src.controllers.auth_controller | Password reset OTP for user3@example.com is 272759
+2026-04-07 11:15:22,618 | INFO | 5c17aba7-a484-4fb6-b178-f5685e30db14 | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=200 duration_ms=92.08
+2026-04-07 11:41:31,579 | INFO | - | src.app | Shutting down application
+2026-04-07 11:42:18,713 | INFO | - | src.app | Starting application
+2026-04-07 11:42:51,873 | INFO | - | src.app | Shutting down application
+2026-04-07 11:42:53,051 | INFO | - | src.app | Starting application
+2026-04-07 11:42:56,074 | INFO | - | src.app | Shutting down application
+2026-04-07 11:42:57,242 | INFO | - | src.app | Starting application
+2026-04-07 11:43:03,525 | INFO | - | src.app | Shutting down application
+2026-04-07 11:43:04,748 | INFO | - | src.app | Starting application
+2026-04-07 11:43:58,947 | INFO | b389591e-d278-46ee-a0b5-2d0762b5b957 | src.utils.middleware | Request completed | method=GET path=/docs status_code=200 duration_ms=0.4
+2026-04-07 11:43:59,166 | INFO | 510ff953-dd12-4b49-a905-997e09f99fb5 | src.utils.middleware | Request completed | method=GET path=/openapi.json status_code=200 duration_ms=94.55
+2026-04-07 11:43:59,248 | INFO | 6d2b0d34-b2b6-4f28-831d-05a30578348a | src.utils.middleware | Request completed | method=GET path=/docs status_code=200 duration_ms=0.47
+2026-04-07 11:43:59,638 | INFO | f630f2a9-bafe-46e4-9672-4dad799b92a2 | src.utils.middleware | Request completed | method=GET path=/openapi.json status_code=200 duration_ms=0.46
+2026-04-07 11:46:39,676 | INFO | - | src.app | Shutting down application
+2026-04-07 11:51:41,905 | INFO | - | src.app | Starting application
+2026-04-07 11:51:50,215 | INFO | 5ef07bd5-007a-43b0-8778-6034fb07d01c | src.utils.middleware | Request completed | method=GET path=/health status_code=200 duration_ms=2.51
+2026-04-07 11:51:58,539 | INFO | 21ab33e9-eb70-4867-97ae-4aa10b9a0662 | src.utils.middleware | Request completed | method=GET path=/ status_code=200 duration_ms=1.0
+2026-04-07 11:52:15,556 | INFO | d4970c56-f1b4-4e1e-9e08-5ecb94fb9bdb | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=92.74
+2026-04-07 11:52:50,318 | INFO | e5cdd81d-9f63-40ab-bf5d-03401dbe28cf | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=3.89
+2026-04-07 11:53:01,882 | INFO | e3af825f-42db-4fc8-9bfa-5dc420eb2248 | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=401 duration_ms=2.02
+2026-04-07 11:53:14,234 | INFO | b1c43ee5-686d-4426-ad78-b9a5bc2e7089 | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=401 duration_ms=1.89
+2026-04-07 11:53:30,355 | INFO | 0f36f9e0-19a5-4ed4-abfa-00d14c33a1ca | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=200 duration_ms=6.47
+2026-04-07 11:53:49,092 | INFO | b6ae2696-09cd-4d9e-8ff7-98aca46ac2d7 | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=200 duration_ms=299.63
+2026-04-07 11:54:27,741 | INFO | 8ad81859-8c64-4d39-b691-be71250b47a7 | src.utils.middleware | Request completed | method=POST path=/user/change-password status_code=200 duration_ms=210.9
+2026-04-07 11:55:06,031 | INFO | 24fc3502-3d20-4b8d-89aa-073fb2b401da | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=69.89
+2026-04-07 11:55:21,951 | INFO | 3d37c52b-208b-47fb-a6a9-221143f6510a | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=400 duration_ms=1.7
+2026-04-07 11:55:59,576 | INFO | 228b7650-9904-488b-a68f-edd7e1b6a426 | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=400 duration_ms=1.57
+2026-04-07 11:56:43,338 | INFO | c8ff490f-19cf-4f10-95d0-477eb37169c7 | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=400 duration_ms=1.44
+2026-04-07 11:58:05,123 | INFO | 0b50d9f7-9e81-43a1-9788-8d8a0a18857b | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=202 duration_ms=8.9
+2026-04-07 11:58:05,124 | INFO | 0b50d9f7-9e81-43a1-9788-8d8a0a18857b | src.controllers.auth_controller | Password reset OTP for user1@example.com is 288170
+2026-04-07 11:59:24,747 | INFO | 230b038e-7c39-421e-bc59-01d66fbba5d4 | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=400 duration_ms=3.44
+2026-04-07 11:59:40,124 | INFO | 110e9d91-fdc6-4652-9f8e-1dcd8a954736 | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=200 duration_ms=77.14
+2026-04-07 11:59:48,822 | INFO | a76058a9-f46d-42b7-9cb0-1a1598baccb7 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=401 duration_ms=71.44
+2026-04-07 11:59:54,040 | INFO | d0152f19-07b6-49f8-b9e9-458f41264cf5 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=91.93
+2026-04-07 12:00:19,763 | INFO | 7cf68520-7a4c-4ebd-9e84-7a736296517c | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=401 duration_ms=3.35
+2026-04-07 12:00:32,399 | INFO | 3a8aab93-507c-4aad-8a45-e5135bda6eaf | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=82.44
+2026-04-07 12:00:52,848 | INFO | ce62c403-e0eb-4c32-83d6-c6aa5afe9bf9 | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=202 duration_ms=8.48
+2026-04-07 12:00:52,848 | INFO | ce62c403-e0eb-4c32-83d6-c6aa5afe9bf9 | src.controllers.auth_controller | Password reset OTP for user2@example.com is 944787
+2026-04-07 12:01:21,681 | INFO | 8c1faa47-1dee-4c79-9656-5561cb044618 | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=200 duration_ms=83.86
+2026-04-07 12:01:39,619 | INFO | 8cc34508-59cc-432b-b7d4-deb72ad63ae5 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=70.6
+2026-04-07 12:01:53,051 | INFO | 99e2799d-60e2-40dd-8b9d-e78d427fcccb | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=82.94
+2026-04-07 12:02:24,940 | INFO | ea8b9d9d-ec0a-4c32-95c7-956cf3ab8908 | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=202 duration_ms=8.34
+2026-04-07 12:02:24,941 | INFO | ea8b9d9d-ec0a-4c32-95c7-956cf3ab8908 | src.controllers.auth_controller | Password reset OTP for user3@example.com is 167429
+2026-04-07 12:06:08,305 | INFO | - | src.app | Shutting down application
+2026-04-07 12:06:29,936 | INFO | - | src.app | Starting application
+2026-04-07 12:08:48,552 | INFO | fe6072b9-10d2-44d8-92ab-a76aeeded187 | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=202 duration_ms=25.16
+2026-04-07 12:08:48,553 | INFO | fe6072b9-10d2-44d8-92ab-a76aeeded187 | src.controllers.auth_controller | Password reset OTP for user1@example.com is 545083
+2026-04-07 12:10:05,319 | INFO | ec9f81af-c3d4-40eb-9752-fc3752ab5fd5 | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=200 duration_ms=80.41
+2026-04-07 12:24:36,550 | INFO | - | src.app | Shutting down application

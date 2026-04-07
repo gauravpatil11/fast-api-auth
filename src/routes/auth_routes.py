@@ -1,9 +1,18 @@
-from fastapi import APIRouter, Depends, Request, status
+from fastapi import APIRouter, BackgroundTasks, Depends, Request, status
 from sqlalchemy.orm import Session
 
-from src.controllers.auth_controller import LoginCredentials, login_user, register_user
-from src.controllers.exceptions import BadRequestError
-from src.models.schemas import LoginRequest, RegisterResponseData, SuccessResponse, Token, UserRegister
+from src.controllers.auth_controller import forgot_password, login_user, register_user, reset_password, send_password_reset_otp_email
+from src.models.schemas import (
+    ForgotPasswordRequest,
+    ForgotPasswordResponseData,
+    LoginRequest,
+    MessageResponseData,
+    RegisterResponseData,
+    ResetPasswordRequest,
+    SuccessResponse,
+    Token,
+    UserRegister,
+)
 from src.utils.dependencies import get_db
 from src.utils.responses import success_response_for_request
 
@@ -21,29 +30,56 @@ def register(request: Request, payload: UserRegister, db: Session = Depends(get_
     )
 
 
-@router.post("/login", response_model=SuccessResponse[Token])
-async def login(
+@router.post("/login", response_model=SuccessResponse[Token], status_code=status.HTTP_200_OK)
+def login(
     request: Request,
+    payload: LoginRequest,
     db: Session = Depends(get_db),
 ) -> dict:
-    content_type = request.headers.get("content-type", "").lower()
-
-    if "application/json" in content_type:
-        payload = LoginRequest.model_validate(await request.json())
-    else:
-        form = await request.form()
-        username = form.get("username")
-        password = form.get("password")
-        if not username or not password:
-            raise BadRequestError("Both username and password are required")
-        payload = LoginCredentials(
-            username=str(username),
-            password=str(password),
-        )
-
     token = login_user(db, payload)
     return success_response_for_request(
         request,
         data=token,
         message="Login successful",
+    )
+
+
+@router.post(
+    "/forgot-password",
+    response_model=SuccessResponse[ForgotPasswordResponseData],
+    status_code=status.HTTP_202_ACCEPTED,
+)
+def forgot_password_route(
+    request: Request,
+    payload: ForgotPasswordRequest,
+    background_tasks: BackgroundTasks,
+    db: Session = Depends(get_db),
+) -> dict:
+    data = forgot_password(
+        db,
+        payload,
+        send_otp_callback=lambda email, otp: background_tasks.add_task(send_password_reset_otp_email, email, otp),
+    )
+    return success_response_for_request(
+        request,
+        data=data,
+        message=data.detail,
+    )
+
+
+@router.post(
+    "/reset-password",
+    response_model=SuccessResponse[MessageResponseData],
+    status_code=status.HTTP_200_OK,
+)
+def reset_password_route(
+    request: Request,
+    payload: ResetPasswordRequest,
+    db: Session = Depends(get_db),
+) -> dict:
+    data = reset_password(db, payload)
+    return success_response_for_request(
+        request,
+        data=data,
+        message=data.detail,
     )
