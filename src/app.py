@@ -9,6 +9,7 @@ from src.controllers.exceptions import DatabaseError
 from src.models.database import Base, engine
 from src.models.schemas import SuccessResponse
 from src.routes.auth_routes import router as auth_router
+from src.routes.strategy_routes import router as strategy_router
 from src.routes.user_routes import router as user_router
 from src.utils.exception_handlers import register_exception_handlers
 from src.utils.logging import configure_logging
@@ -47,6 +48,7 @@ register_exception_handlers(app)
 register_middlewares(app)
 
 app.include_router(auth_router)
+app.include_router(strategy_router)
 app.include_router(user_router)
 
 

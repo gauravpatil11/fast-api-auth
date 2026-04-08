@@ -427,3 +427,36 @@ TypeError: Object of type bytes is not JSON serializable
 2026-04-08 14:19:41,681 | INFO | ea8e712a-93e1-43c8-8dba-91ef28c78e59 | src.controllers.auth_controller | Password reset OTP for user1@example.com is 410967
 2026-04-08 14:20:04,498 | INFO | 69677b67-869f-4807-8489-e597f509356f | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=200 duration_ms=158.76
 2026-04-08 14:20:50,588 | INFO | - | src.app | Shutting down application
+2026-04-08 15:22:22,057 | INFO | - | src.app | Starting application
+2026-04-08 15:27:46,555 | INFO | 8789689d-b68a-463a-b888-2b1ae4b527fa | src.utils.middleware | Request completed | method=GET path=/health status_code=200 duration_ms=2.0
+2026-04-08 15:28:14,768 | INFO | 35889bbb-275d-4f9f-adce-3baa9f3d542c | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=93.67
+2026-04-08 15:28:42,568 | INFO | 1cc64840-52ea-4949-9677-fe82e5e06ceb | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=4.79
+2026-04-08 15:29:10,180 | INFO | 2b808715-a1aa-4bc3-88b1-74a08f4b021d | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=401 duration_ms=2.02
+2026-04-08 15:29:19,363 | INFO | 8671ff32-6670-48b0-87de-b62516b4c5cb | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=200 duration_ms=19.12
+2026-04-08 15:39:44,457 | INFO | - | src.app | Shutting down application
+2026-04-08 15:39:50,091 | INFO | - | src.app | Starting application
+2026-04-08 15:39:55,890 | INFO | 92fec627-d7bb-489f-8481-30a33ccff31e | src.utils.middleware | Request completed | method=GET path=/health status_code=200 duration_ms=1.86
+2026-04-08 15:40:05,289 | INFO | 87606618-f2df-42f7-bf97-2e76770db511 | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=95.73
+2026-04-08 15:40:24,455 | INFO | b226a8d0-62f5-4daa-b185-4f06c718c1d3 | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=4.8
+2026-04-08 15:40:42,812 | INFO | ef0831bd-9486-498e-ad94-ac050e0baa0a | src.utils.middleware | Request completed | method=PUT path=/user/profile status_code=200 duration_ms=23.97
+2026-04-08 15:41:26,254 | INFO | 0b332c24-db3e-4a24-89d2-ef35eee043b5 | src.utils.middleware | Request completed | method=POST path=/user/change-password status_code=401 duration_ms=1.81
+2026-04-08 15:41:33,938 | INFO | 96c519c6-a0ff-4882-98df-fdd34cccc697 | src.utils.middleware | Request completed | method=POST path=/user/change-password status_code=200 duration_ms=217.28
+2026-04-08 15:41:52,299 | INFO | 8dc9df31-7337-46ad-b473-659fd644128a | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=74.98
+2026-04-08 15:48:40,194 | INFO | e07b9397-db5b-4081-bf08-f7cdc6840e2a | src.utils.middleware | Request completed | method=POST path=/auth/forgot-password status_code=202 duration_ms=11.81
+2026-04-08 15:48:40,195 | INFO | e07b9397-db5b-4081-bf08-f7cdc6840e2a | src.controllers.auth_controller | Password reset OTP for user1@example.com is 933249
+2026-04-08 15:48:54,554 | INFO | 934fad64-ecf4-448b-9d3d-b3e8819444c3 | src.utils.middleware | Request completed | method=POST path=/auth/reset-password status_code=200 duration_ms=78.29
+2026-04-08 15:49:30,607 | INFO | b17f8d09-2641-4b18-901b-b56548b7fd77 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=401 duration_ms=75.05
+2026-04-08 15:49:37,338 | INFO | f514dd10-3f8a-46ee-969b-5b365fb4d281 | src.utils.middleware | Request completed | method=POST path=/auth/login status_code=200 duration_ms=78.64
+2026-04-08 15:51:15,435 | INFO | 5e963f60-e7a6-4d11-bae8-20bddb85071d | src.utils.middleware | Request completed | method=POST path=/strategies status_code=201 duration_ms=14.85
+2026-04-08 15:52:25,597 | INFO | f829aa84-e78f-4152-80f1-3ce6596152ab | src.utils.middleware | Request completed | method=GET path=/strategies status_code=200 duration_ms=5.3
+2026-04-08 15:53:46,592 | INFO | 748bef18-37b5-42b8-8838-fa87e774f0c4 | src.utils.middleware | Request completed | method=POST path=/strategies status_code=201 duration_ms=120.27
+2026-04-08 15:53:55,528 | INFO | 85ef9d8c-a9d1-427e-a552-3918bfe17619 | src.utils.middleware | Request completed | method=GET path=/strategies status_code=200 duration_ms=3.77
+2026-04-08 15:56:44,087 | INFO | 2bb259b9-67d7-4f25-b89c-884acbfd0c0a | src.utils.middleware | Request completed | method=GET path=/strategies/1 status_code=401 duration_ms=1.18
+2026-04-08 15:57:07,460 | INFO | dfa04645-aac2-420a-808e-ec8606054955 | src.utils.middleware | Request completed | method=GET path=/strategies/1 status_code=200 duration_ms=3.77
+2026-04-08 15:58:43,413 | INFO | 2b9ce393-061a-47ea-aaa3-0aaae95c61e3 | src.utils.middleware | Request completed | method=PUT path=/strategies/1 status_code=200 duration_ms=10.9
+2026-04-08 16:39:06,554 | INFO | 48b85a1b-8c2a-47cb-ae09-a0275684ac0c | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=82.63
+2026-04-08 16:40:16,559 | INFO | 90e60c50-e4ac-4539-ae43-12ccdc0b7427 | src.utils.middleware | Request completed | method=POST path=/strategies status_code=201 duration_ms=16.78
+2026-04-08 16:48:50,664 | INFO | 21548da6-51ff-4f16-b1e1-f7ce13ef7b41 | src.utils.middleware | Request completed | method=POST path=/strategies status_code=201 duration_ms=9.8
+2026-04-08 16:49:45,366 | INFO | 6ef59050-dd62-41e5-9841-2ea3c609d623 | src.utils.middleware | Request completed | method=GET path=/strategies status_code=401 duration_ms=1.17
+2026-04-08 16:50:17,847 | INFO | 5ebcfaf6-dc69-4b23-a7e3-46d9e012217a | src.utils.middleware | Request completed | method=GET path=/strategies status_code=200 duration_ms=2.94
+2026-04-08 17:07:11,316 | INFO | - | src.app | Shutting down application

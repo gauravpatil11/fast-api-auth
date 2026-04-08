@@ -31,8 +31,8 @@ from src.utils.security import (
     generate_password_reset_otp,
     get_password_hash,
     get_password_reset_token_expiry,
+    get_server_time,
     hash_password_reset_token,
-    normalize_client_time,
     verify_password,
 )
 
@@ -131,9 +131,10 @@ def forgot_password(
             return ForgotPasswordResponseData(detail=FORGOT_PASSWORD_MESSAGE)
 
         otp = generate_password_reset_otp()
+        server_time = get_server_time()
         user.password_reset_otp_hash = hash_password_reset_token(otp)
-        user.password_reset_otp_created_at = normalize_client_time(payload.client_time)
-        user.password_reset_otp_expires_at = get_password_reset_token_expiry(payload.client_time)
+        user.password_reset_otp_created_at = server_time
+        user.password_reset_otp_expires_at = get_password_reset_token_expiry()
         update_user(db, user)
         if send_otp_callback is not None:
             send_otp_callback(payload.email, otp)
@@ -163,7 +164,7 @@ def reset_password(db: Session, payload: ResetPasswordRequest) -> MessageRespons
         if user.password_reset_otp_expires_at is None:
             raise BadRequestError("Invalid OTP or expired OTP")
 
-        if normalize_client_time(payload.client_time) > user.password_reset_otp_expires_at:
+        if get_server_time() > user.password_reset_otp_expires_at:
             raise BadRequestError("Invalid OTP or expired OTP")
 
         user.hashed_password = get_password_hash(payload.new_password)

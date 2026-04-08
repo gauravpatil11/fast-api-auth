@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, DateTime, Integer, String
+from sqlalchemy import JSON, Boolean, Column, DateTime, ForeignKey, Integer, String, UniqueConstraint, func
 
 from src.models.database import Base
 
@@ -15,3 +15,23 @@ class User(Base):
     password_reset_otp_hash = Column(String(64), nullable=True)
     password_reset_otp_expires_at = Column(DateTime(timezone=False), nullable=True)
     password_reset_otp_created_at = Column(DateTime(timezone=False), nullable=True)
+
+
+class Strategy(Base):
+    __tablename__ = "strategies"
+    __table_args__ = (
+        UniqueConstraint("user_id", "strategy_name", name="uq_strategies_user_id_strategy_name"),
+    )
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
+    strategy_name = Column(String(255), nullable=False)
+    legs = Column(JSON, nullable=False)
+    multiplier = Column(Integer, nullable=False, default=1)
+    created_at = Column(DateTime(timezone=False), nullable=False, server_default=func.now())
+    updated_at = Column(
+        DateTime(timezone=False),
+        nullable=False,
+        server_default=func.now(),
+        onupdate=func.now(),
+    )

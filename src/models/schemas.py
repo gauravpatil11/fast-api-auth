@@ -1,13 +1,15 @@
-from datetime import datetime
+from datetime import date, datetime
+from enum import Enum
 from typing import Any, Generic, TypeVar
 
-from pydantic import BaseModel, ConfigDict, EmailStr, field_validator
+from pydantic import BaseModel, ConfigDict, EmailStr, field_validator, model_validator
 
 
 USERNAME_MIN_LENGTH = 3
 USERNAME_MAX_LENGTH = 100
 PASSWORD_MIN_LENGTH = 8
 PASSWORD_MAX_LENGTH = 128
+STRATEGY_NAME_MAX_LENGTH = 255
 T = TypeVar("T")
 
 
@@ -36,6 +38,15 @@ def _validate_password(value: str) -> str:
     if len(value) > PASSWORD_MAX_LENGTH:
         raise ValueError(f"Password must be at most {PASSWORD_MAX_LENGTH} characters long")
     return value
+
+
+def _validate_strategy_name(value: str) -> str:
+    normalized_value = value.strip()
+    if not normalized_value:
+        raise ValueError("Strategy name is required")
+    if len(normalized_value) > STRATEGY_NAME_MAX_LENGTH:
+        raise ValueError(f"Strategy name must be at most {STRATEGY_NAME_MAX_LENGTH} characters long")
+    return normalized_value
 
 
 class Token(BaseModel):
@@ -133,17 +144,11 @@ class ChangePasswordRequest(BaseModel):
 
 class ForgotPasswordRequest(BaseModel):
     email: EmailStr
-    client_time: datetime
 
     @field_validator("email")
     @classmethod
     def normalize_email(cls, value: EmailStr) -> str:
         return _normalize_email(str(value))
-
-    @field_validator("client_time")
-    @classmethod
-    def validate_client_time(cls, value: datetime) -> datetime:
-        return value
 
 
 class ForgotPasswordResponseData(BaseModel):
@@ -155,7 +160,6 @@ class ResetPasswordRequest(BaseModel):
     email: EmailStr
     otp: str
     new_password: str
-    client_time: datetime
 
     @field_validator("email")
     @classmethod
@@ -175,10 +179,111 @@ class ResetPasswordRequest(BaseModel):
     def validate_new_password(cls, value: str) -> str:
         return _validate_password(value)
 
-    @field_validator("client_time")
+
+class StrategySide(str, Enum):
+    BUY = "BUY"
+    SELL = "SELL"
+
+
+class StrategyOptionType(str, Enum):
+    CE = "CE"
+    PE = "PE"
+
+
+class StrategyLeg(BaseModel):
+    side: StrategySide
+    expiry: date
+    strike: float
+    type: StrategyOptionType
+    lots: int
+
+    @field_validator("strike")
     @classmethod
-    def validate_client_time(cls, value: datetime) -> datetime:
+    def validate_strike(cls, value: float) -> float:
+        if value <= 0:
+            raise ValueError("Strike must be greater than 0")
         return value
+
+    @field_validator("lots")
+    @classmethod
+    def validate_lots(cls, value: int) -> int:
+        if value <= 0:
+            raise ValueError("Lots must be greater than 0")
+        return value
+
+
+class StrategyBase(BaseModel):
+    strategy_name: str
+    legs: list[StrategyLeg]
+    multiplier: int
+
+    @field_validator("strategy_name")
+    @classmethod
+    def validate_strategy_name(cls, value: str) -> str:
+        return _validate_strategy_name(value)
+
+    @field_validator("multiplier")
+    @classmethod
+    def validate_multiplier(cls, value: int) -> int:
+        if value <= 0:
+            raise ValueError("Multiplier must be greater than 0")
+        return value
+
+    @model_validator(mode="after")
+    def validate_legs(self) -> "StrategyBase":
+        if not self.legs:
+            raise ValueError("At least one strategy leg is required")
+        return self
+
+
+class StrategyCreate(StrategyBase):
+    pass
+
+
+class StrategyUpdate(BaseModel):
+    strategy_name: str | None = None
+    legs: list[StrategyLeg] | None = None
+    multiplier: int | None = None
+
+    @field_validator("strategy_name")
+    @classmethod
+    def validate_optional_strategy_name(cls, value: str | None) -> str | None:
+        if value is None:
+            return value
+        return _validate_strategy_name(value)
+
+    @field_validator("multiplier")
+    @classmethod
+    def validate_optional_multiplier(cls, value: int | None) -> int | None:
+        if value is None:
+            return value
+        if value <= 0:
+            raise ValueError("Multiplier must be greater than 0")
+        return value
+
+    @model_validator(mode="after")
+    def validate_update_fields(self) -> "StrategyUpdate":
+        if (
+            self.strategy_name is None
+            and self.legs is None
+            and self.multiplier is None
+        ):
+            raise ValueError("At least one strategy field must be provided")
+        if self.legs is not None and not self.legs:
+            raise ValueError("At least one strategy leg is required")
+        return self
+
+
+class StrategyResponse(BaseModel):
+    id: int
+    user_id: int
+    strategy_name: str
+    legs: list[StrategyLeg]
+    multiplier: int
+    created_at: datetime
+    updated_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class MessageResponseData(BaseModel):

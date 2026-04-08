@@ -12,7 +12,6 @@ from src.models.schemas import TokenData
 
 
 password_hash = PasswordHash.recommended()
-IST = timezone(timedelta(hours=5, minutes=30))
 
 
 def get_password_hash(password: str) -> str:
@@ -64,12 +63,9 @@ def hash_password_reset_token(token: str) -> str:
     return hashlib.sha256(token.encode("utf-8")).hexdigest()
 
 
-def normalize_client_time(client_time: datetime) -> datetime:
-    if client_time.tzinfo is None:
-        return client_time
-    return client_time.astimezone(IST).replace(tzinfo=None)
+def get_server_time() -> datetime:
+    return datetime.now(timezone.utc).replace(tzinfo=None)
 
 
-def get_password_reset_token_expiry(client_time: datetime) -> datetime:
-    return normalize_client_time(client_time) + timedelta(minutes=settings.reset_token_expire_minutes)
-
+def get_password_reset_token_expiry() -> datetime:
+    return get_server_time() + timedelta(minutes=settings.reset_token_expire_minutes)

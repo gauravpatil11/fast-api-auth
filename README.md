@@ -10,8 +10,8 @@ Authentication flow:
 
 - `POST /auth/register` accepts JSON with `username`, `email`, and `password`.
 - `POST /auth/login` accepts JSON with `email` and `password`.
-- `POST /auth/forgot-password` accepts JSON with `email` and `client_time`, then sends a password reset OTP.
-- `POST /auth/reset-password` accepts JSON with `email`, `otp`, `new_password`, and `client_time`.
+- `POST /auth/forgot-password` accepts JSON with `email`, then sends a password reset OTP.
+- `POST /auth/reset-password` accepts JSON with `email`, `otp`, and `new_password`.
 - `GET /user/profile` returns the authenticated user profile.
 - `PUT /user/profile` updates the authenticated user's `username` and/or `email`.
 - `POST /user/change-password` accepts JSON with `current_password` and `new_password`.
