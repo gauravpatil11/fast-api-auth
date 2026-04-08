@@ -72,3 +72,4 @@ def normalize_client_time(client_time: datetime) -> datetime:
 
 def get_password_reset_token_expiry(client_time: datetime) -> datetime:
     return normalize_client_time(client_time) + timedelta(minutes=settings.reset_token_expire_minutes)
+

@@ -36,11 +36,14 @@ class Settings(BaseSettings):
     jwt_secret_key: str = Field(default="")
     jwt_algorithm: str = JWT_ALGORITHM
     access_token_expire_minutes: int = ACCESS_TOKEN_EXPIRE_MINUTES
+    
     reset_token_expire_minutes: int = 5
     reset_otp_length: int = 6
+    
     frontend_url: str | None = None
     password_reset_url_base: str | None = None
     password_reset_path: str = "/reset-password"
+    
     mail_host: str | None = None
     mail_port: int = 587
     mail_username: str | None = None

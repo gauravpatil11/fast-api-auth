@@ -12,6 +12,6 @@ class User(Base):
     hashed_password = Column(String(255), nullable=False)
     is_active = Column(Boolean, default=True, nullable=False)
     is_admin = Column(Boolean, default=False, nullable=False)
-    password_reset_otp_hash = Column(String(64), unique=True, nullable=True, index=True)
+    password_reset_otp_hash = Column(String(64), nullable=True)
     password_reset_otp_expires_at = Column(DateTime(timezone=False), nullable=True)
     password_reset_otp_created_at = Column(DateTime(timezone=False), nullable=True)

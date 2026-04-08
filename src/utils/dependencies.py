@@ -49,3 +49,4 @@ def get_current_admin(current_user: CurrentUser) -> User:
     if not current_user.is_admin:
         raise ForbiddenError("Admin access required")
     return current_user
+
