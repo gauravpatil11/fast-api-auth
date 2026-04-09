@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, Request, status
 from sqlalchemy.orm import Session
 
+from src.constant.app_constants import APP_TAG_STRATEGIES
 from src.controllers.strategy_controller import (
     create_user_strategy,
     delete_user_strategy,
@@ -19,7 +20,7 @@ from src.utils.dependencies import CurrentUser, get_db
 from src.utils.responses import success_response_for_request
 
 
-router = APIRouter(prefix="/strategies", tags=["strategies"])
+router = APIRouter(prefix="/strategies", tags=[APP_TAG_STRATEGIES])
 
 
 @router.post("", response_model=SuccessResponse[StrategyResponse], status_code=status.HTTP_201_CREATED)

@@ -5,7 +5,6 @@ from src.controllers.exceptions import BadRequestError, ConflictError, DatabaseE
 from src.models.db_models import User
 from src.models.schemas import ChangePasswordRequest, MessageResponseData, UserUpdate
 from src.models.user_crud import (
-    get_user_by_email,
     get_user_by_username,
     list_users,
     update_user,
@@ -19,20 +18,14 @@ def get_profile(current_user: User) -> User:
 
 def update_profile(db: Session, current_user: User, payload: UserUpdate) -> User:
     try:
-        if payload.username is None and payload.email is None:
-            raise BadRequestError("At least one profile field must be provided")
+        if payload.username is None:
+            raise BadRequestError("Username must be provided")
 
         if payload.username and payload.username.lower() != current_user.username.lower():
             existing_username = get_user_by_username(db, payload.username)
             if existing_username and existing_username.id != current_user.id:
                 raise ConflictError("Username already registered")
             current_user.username = payload.username
-
-        if payload.email and payload.email != current_user.email.lower():
-            existing_email = get_user_by_email(db, payload.email)
-            if existing_email and existing_email.id != current_user.id:
-                raise ConflictError("Email already registered")
-            current_user.email = payload.email
 
         return update_user(db, current_user)
     except BadRequestError:

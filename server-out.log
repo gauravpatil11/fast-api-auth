@@ -460,3 +460,15 @@ TypeError: Object of type bytes is not JSON serializable
 2026-04-08 16:49:45,366 | INFO | 6ef59050-dd62-41e5-9841-2ea3c609d623 | src.utils.middleware | Request completed | method=GET path=/strategies status_code=401 duration_ms=1.17
 2026-04-08 16:50:17,847 | INFO | 5ebcfaf6-dc69-4b23-a7e3-46d9e012217a | src.utils.middleware | Request completed | method=GET path=/strategies status_code=200 duration_ms=2.94
 2026-04-08 17:07:11,316 | INFO | - | src.app | Shutting down application
+2026-04-09 09:24:41,608 | INFO | - | src.app | Starting application
+2026-04-09 09:25:13,927 | INFO | be42468a-6b78-4e69-bbaf-f174b3e82e1c | src.utils.middleware | Request completed | method=GET path=/health status_code=200 duration_ms=20.2
+2026-04-09 09:25:38,961 | INFO | ed7c63ba-379d-4058-a609-56f8ab2aacfa | src.utils.middleware | Request completed | method=POST path=/auth/register status_code=201 duration_ms=109.51
+2026-04-09 09:26:03,947 | INFO | a3a7fc9e-c036-4745-bc43-c6b96f363155 | src.utils.middleware | Request completed | method=GET path=/user/profile status_code=200 duration_ms=13.4
+2026-04-09 09:26:46,264 | INFO | 17e5366a-77c9-4c80-98aa-ab79a9236793 | src.utils.middleware | Request completed | method=POST path=/strategies status_code=401 duration_ms=12.33
+2026-04-09 09:27:21,337 | INFO | 90e37507-b56d-48ec-b7a9-69b016f1b0ff | src.utils.middleware | Request completed | method=POST path=/strategies status_code=201 duration_ms=20.32
+2026-04-09 09:29:50,246 | INFO | ca79aa39-4f9e-4f23-a5d1-ec74539b77f0 | src.utils.middleware | Request completed | method=POST path=/strategies status_code=201 duration_ms=16.76
+2026-04-09 09:30:17,586 | INFO | 3d8d8940-c53c-4df1-8aea-3c6091d0f93e | src.utils.middleware | Request completed | method=GET path=/strategies status_code=200 duration_ms=4.12
+2026-04-09 09:30:39,559 | INFO | b5145d3b-edc7-4c41-9332-2522c2d9522d | src.utils.middleware | Request completed | method=GET path=/strategies/1 status_code=200 duration_ms=3.63
+2026-04-09 09:34:13,982 | INFO | b831f26c-320b-44e2-b512-f55d552e105c | src.utils.middleware | Request completed | method=PUT path=/strategies/1 status_code=200 duration_ms=17.93
+2026-04-09 09:34:22,150 | INFO | dbe7df5a-5205-42b8-9582-8e5c1b13093e | src.utils.middleware | Request completed | method=GET path=/strategies status_code=200 duration_ms=3.62
+2026-04-09 09:50:27,661 | INFO | - | src.app | Shutting down application

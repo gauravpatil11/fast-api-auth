@@ -1,6 +1,7 @@
 from fastapi import APIRouter, BackgroundTasks, Depends, Request, status
 from sqlalchemy.orm import Session
 
+from src.constant.app_constants import APP_TAG_AUTH
 from src.controllers.auth_controller import forgot_password, login_user, register_user, reset_password, send_password_reset_otp_email
 from src.models.schemas import (
     ForgotPasswordRequest,
@@ -17,7 +18,7 @@ from src.utils.dependencies import get_db
 from src.utils.responses import success_response_for_request
 
 
-router = APIRouter(prefix="/auth", tags=["auth"])
+router = APIRouter(prefix="/auth", tags=[APP_TAG_AUTH])
 
 
 @router.post("/register", response_model=SuccessResponse[RegisterResponseData], status_code=status.HTTP_201_CREATED)

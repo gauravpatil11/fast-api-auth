@@ -4,6 +4,8 @@ from typing import Any, Generic, TypeVar
 
 from pydantic import BaseModel, ConfigDict, EmailStr, field_validator, model_validator
 
+from src.config import settings
+
 
 USERNAME_MIN_LENGTH = 3
 USERNAME_MAX_LENGTH = 100
@@ -115,7 +117,6 @@ class LoginRequest(BaseModel):
 
 class UserUpdate(BaseModel):
     username: str | None = None
-    email: EmailStr | None = None
 
     @field_validator("username")
     @classmethod
@@ -123,13 +124,6 @@ class UserUpdate(BaseModel):
         if value is None:
             return value
         return _validate_username(value)
-
-    @field_validator("email")
-    @classmethod
-    def validate_optional_email(cls, value: EmailStr | None) -> str | None:
-        if value is None:
-            return value
-        return _normalize_email(str(value))
 
 
 class ChangePasswordRequest(BaseModel):
@@ -170,8 +164,8 @@ class ResetPasswordRequest(BaseModel):
     @classmethod
     def validate_otp(cls, value: str) -> str:
         otp = value.strip()
-        if len(otp) != 6 or not otp.isdigit():
-            raise ValueError("OTP must be a 6 digit code")
+        if len(otp) != settings.reset_otp_length or not otp.isdigit():
+            raise ValueError(f"OTP must be a {settings.reset_otp_length} digit code")
         return otp
 
     @field_validator("new_password")

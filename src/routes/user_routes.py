@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, Request, status
 from sqlalchemy.orm import Session
 
+from src.constant.app_constants import APP_TAG_USER
 from src.controllers.user_controller import change_password, get_profile, get_user_list, update_profile
 from src.models.db_models import User
 from src.models.schemas import ChangePasswordRequest, MessageResponseData, SuccessResponse, UserResponse, UserUpdate
@@ -8,7 +9,7 @@ from src.utils.dependencies import CurrentUser, get_current_admin, get_db
 from src.utils.responses import success_response_for_request
 
 
-router = APIRouter(prefix="/user", tags=["user"])
+router = APIRouter(prefix="/user", tags=[APP_TAG_USER])
 
 
 @router.get("/profile", response_model=SuccessResponse[UserResponse], status_code=status.HTTP_200_OK)
